@@ -26,22 +26,23 @@
 
 ## :zap: Objective
 
-Este pacote tem como objetivo emular componentes da vtex para otimizar o desenvolvimento front-end local.
+This package has as objective emulate components of vtex to optimize or develop the local front-end.
 
-Atualmente o pacote emula os seguintes componentes:
+Currently the package emulates the following components:
 
-- <vtex:template id="sub-template-aqui.html" /> 
+- *<vtex:template id="sub-template-aqui.html" />*
 
 ### :x: Erros comuns.
 
-Use os componentes um embaixo do outro como o exemplo a seguir:
+Use the components underneath each other as the following example:
+
 <br>
 ```
 <vtex:template id="sub-template-aqui.html" /> 
 <vtex:template id="sub-template-aqui.html" /> 
 ```
 
-**NÃO** use os componentes juntos em linha:
+**DO NOT** use the components together in line:
 <br>
 ```
 <vtex:template id="sub-template-aqui.html" /> <vtex:template id="sub-template-aqui.html" />
@@ -62,9 +63,10 @@ This project was developed with the following technologies:
 
 ## :information_source: How To Use
 
-Para usar este pacote você irá precisar do [Gulp](https://gulpjs.com/) e do [Node](https://nodejs.org/en/).
 
-Partindo da seguinte estrutura:
+To use this package you will need the [Gulp](https://gulpjs.com/) and [Node](https://nodejs.org/en/).
+
+Starting from the structure:
 ```
 Raiz da pasta
 ├---templates
@@ -79,7 +81,7 @@ Raiz da pasta
 
 ```
 
- Na sua linha de comando:
+On your command line:
 
 ```bash
 # Instale o gulp-cli globalmente
@@ -91,7 +93,7 @@ $ npm install gulp
 # Instale o sm-vtex-local 
 $ npm install sm-vtex-local
 ```
-Crie um gulpfile.js com essas configurações:
+Create a gulpfile.js with these settings:
 
 ```js
 const gulp = require('gulp');
@@ -105,7 +107,7 @@ gulp.task('components', function () {
 })
 ```
 
-Configurações feitas agora só executar:
+Settings done, now just run:
 
 ```bash
 $ gulp components

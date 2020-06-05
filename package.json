@@ -1,6 +1,6 @@
 {
   "name": "sm-vtex-local",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Pacote útil para desenvolvimento de e-commerce vtex",
   "main": "index.js",
   "scripts": {
