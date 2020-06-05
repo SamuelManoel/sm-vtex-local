@@ -1,0 +1,1 @@
+# Lib de como rodar componentes Vtex no ambiente Local
