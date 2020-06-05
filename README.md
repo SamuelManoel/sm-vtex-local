@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="#objective">Objective</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#zap-objective">Objective</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
@@ -32,7 +32,7 @@ Atualmente o pacote emula os seguintes componentes:
 
 - <vtex:template id="sub-template-aqui.html" /> 
 
-## Erros comuns.
+### :x: Erros comuns.
 
 Use os componentes um embaixo do outro como o exemplo a seguir:
 <br>
@@ -59,6 +59,59 @@ This project was developed with the following technologies:
 -  [Through2](https://www.npmjs.com/package/through2)
 -  [File System](https://nodejs.org/api/fs.html)
 
+
+## :information_source: How To Use
+
+Para usar este pacote você irá precisar do [Gulp](https://gulpjs.com/) e do [Node](https://nodejs.org/en/).
+
+Partindo da seguinte estrutura:
+```
+Raiz da pasta
+├---templates
+|   |   home.html
+|   |
+|   └--sub-templates
+|           footer.html
+|           header.html
+|
+|---gulfile.js
+|.....
+
+```
+
+ Na sua linha de comando:
+
+```bash
+# Instale o gulp-cli globalmente
+$ npm install --global gulp-cli
+
+# Instale o gulp 
+$ npm install gulp
+
+# Instale o sm-vtex-local 
+$ npm install sm-vtex-local
+```
+Crie um gulpfile.js com essas configurações:
+
+```js
+const gulp = require('gulp');
+
+const {templates} = require('sm-vtex-local');
+
+gulp.task('components', function () {
+    gulp.src('./templates/*.html') // informe o caminho dos seus templates html
+        .pipe(templates('./templates/sub-templates/')) // informe o caminho dos seus sub-templates
+        .pipe(gulp.dest('dist')); 
+})
+```
+
+Configurações feitas agora só executar:
+
+```bash
+$ gulp components
+```
+
+
 ## :memo: License
 
 This project is under the MIT license. See the [LICENSE](https://github.com/SamuelManoel/sm-vtex-local/blob/master/LICENCE) for more information.
@@ -66,6 +119,3 @@ This project is under the MIT license. See the [LICENSE](https://github.com/Samu
 ---
 
 Made with ♥ by Samuel Manoel Gomes 
-
-
-
