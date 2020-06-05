@@ -1,0 +1,28 @@
+{
+  "name": "sm-vtex-local",
+  "version": "1.0.0",
+  "description": "Pacote útil para desenvolvimento de e-commerce vtex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelManoel/sm-vtex-local.git"
+  },
+  "keywords": [
+    "vtex",
+    "local",
+    "frontend"
+  ],
+  "author": "samuelmanoel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamuelManoel/sm-vtex-local/issues"
+  },
+  "homepage": "https://github.com/SamuelManoel/sm-vtex-local#readme",
+  "dependencies": {
+    "gulp-util": "^3.0.8",
+    "through2": "^3.0.1"
+  }
+}
