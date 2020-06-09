@@ -30,22 +30,22 @@ This package has as objective emulate components of vtex to optimize or develop 
 
 Currently the package emulates the following components:
 
-- *<vtex:template id="sub-template-aqui.html" />*
+- *<vtex:template id="sub-template-aqui" />*
 
-### :x: Erros comuns.
+### :x: Common mistakes.
 
 Use the components underneath each other as the following example:
-
 <br>
+
 ```
-<vtex:template id="sub-template-aqui.html" /> 
-<vtex:template id="sub-template-aqui.html" /> 
+<vtex:template id="sub-template-aqui" /> 
+<vtex:template id="sub-template-aqui" /> 
 ```
 
 **DO NOT** use the components together in line:
 <br>
 ```
-<vtex:template id="sub-template-aqui.html" /> <vtex:template id="sub-template-aqui.html" />
+<vtex:template id="sub-template-aqui" /> <vtex:template id="sub-template-aqui" />
 ```
 
 ## :rocket: Technologies
@@ -76,7 +76,7 @@ Raiz da pasta
 |           footer.html
 |           header.html
 |
-|---gulfile.js
+|---gulpfile.js
 |.....
 
 ```
@@ -84,13 +84,13 @@ Raiz da pasta
 On your command line:
 
 ```bash
-# Instale o gulp-cli globalmente
+# Install gulp-cli global
 $ npm install --global gulp-cli
 
-# Instale o gulp 
+# Install gulp 
 $ npm install gulp
 
-# Instale o sm-vtex-local 
+# Install sm-vtex-local 
 $ npm install sm-vtex-local
 ```
 Create a gulpfile.js with these settings:
@@ -100,9 +100,9 @@ const gulp = require('gulp');
 
 const {templates} = require('sm-vtex-local');
 
-gulp.task('components', function () {
-    gulp.src('./templates/*.html') // informe o caminho dos seus templates html
-        .pipe(templates('./templates/sub-templates/')) // informe o caminho dos seus sub-templates
+gulp.task('components', ()=> {
+    gulp.src('./templates/*.html') // template path
+        .pipe(templates('./templates/sub-templates/')) // sub-template path
         .pipe(gulp.dest('dist')); 
 })
 ```
