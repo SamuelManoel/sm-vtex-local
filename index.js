@@ -21,7 +21,7 @@ function templates(componentsUrl) {
 		let data = file.contents.toString()
 		//substitui as tags procuradas dentro do arquivo pelo caminho passado
 		let dataReplace = data.replace(fileReg, (match, componentName) => {     
-            return fs.readFileSync(componentsUrl + componentName, {
+            return fs.readFileSync(componentsUrl + componentName + '.html', {
                 encoding: 'utf8'
             })
         })
