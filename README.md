@@ -30,22 +30,27 @@ This package has as objective emulate components of vtex to optimize or develop 
 
 Currently the package emulates the following components:
 
-- *<vtex:template id="sub-template-aqui" />*
+```html
+<vtex:template id="sub-template" />
+<vtex:contentPlaceHolder id="shelves" />  <!-- Banner, Shelves, Html -->
+
+```
 
 ### :x: Common mistakes.
 
 Use the components underneath each other as the following example:
 <br>
 
-```
-<vtex:template id="sub-template-aqui" /> 
-<vtex:template id="sub-template-aqui" /> 
+```html
+<vtex:template id="sub-template" /> 
+<vtex:template id="sub-template" /> 
 ```
 
 **DO NOT** use the components together in line:
 <br>
-```
-<vtex:template id="sub-template-aqui" /> <vtex:template id="sub-template-aqui" />
+
+```html
+<vtex:template id="sub-template" /> <vtex:template id="sub-template" />
 ```
 
 ## :rocket: Technologies
@@ -69,16 +74,16 @@ To use this package you will need the [Gulp](https://gulpjs.com/) and [Node](htt
 Starting from the structure:
 ```
 Raiz da pasta
-├---templates
+├---Templates
 |   |   home.html
 |   |
 |   └--sub-templates
 |           footer.html
 |           header.html
-|
+| 
+├---Shelves
+├---Banner & Html
 |---gulpfile.js
-|.....
-
 ```
 
 On your command line:
@@ -98,11 +103,13 @@ Create a gulpfile.js with these settings:
 ```js
 const gulp = require('gulp');
 
-const {templates} = require('sm-vtex-local');
+const {templates, placeHolder} = require('sm-vtex-local');
 
 gulp.task('components', ()=> {
     gulp.src('./templates/*.html') // template path
         .pipe(templates('./templates/sub-templates/')) // sub-template path
+        .pipe(placeHolder('./Shelves/', 5)) // Shelves path & number of items on the shelf
+        .pipe(placeHolder('./Banner & Html/')) // Banner & Html path
         .pipe(gulp.dest('dist')); 
 })
 ```
@@ -112,7 +119,6 @@ Settings done, now just run:
 ```bash
 $ gulp components
 ```
-
 
 ## :memo: License
 
